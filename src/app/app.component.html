@@ -8,8 +8,8 @@
 
 <div class="courses">
 
-  <course-card (courseSelected)="onCourseSelected()" [course]="coreCourse"></course-card>
-  <course-card [course]="rxjxCourse"></course-card>
-  <course-card [course]="ngrxCourse"></course-card>
+  <course-card (courseSelected)="onCourseSelected($event)" [course]="coreCourse"></course-card>
+  <course-card (courseSelected)="onCourseSelected($event)" [course]="rxjxCourse"></course-card>
+  <course-card (courseSelected)="onCourseSelected($event)" [course]="ngrxCourse"></course-card>
 
 </div>
