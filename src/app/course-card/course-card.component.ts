@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Course } from '../model/course';
+import { COURSES } from 'src/db-data';
 
 @Component({
   selector: 'course-card',
@@ -9,20 +10,27 @@ import { Course } from '../model/course';
 export class CourseCardComponent implements OnInit {
 
   @Input()
-  course:Course;
+  course: Course;
+
+  @Input()
+  cardIndex: number;
 
   @Output()
   courseSelected = new EventEmitter<Course>();
 
   constructor() {
-  }//constructor
+  }
 
   ngOnInit() {
-  }//ngOnInit
+  }
 
   onCourseViewed(){
     console.log("card component - button clicked ...");
     this.courseSelected.emit(this.course);
-  }//onCourseViewed
+  }
+
+  isImageVisible(){
+    return this.course && this.course.iconUrl;
+  }
 
 }
